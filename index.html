@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>РПП Помощник</title>
+  <link rel="manifest" href="manifest.json">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- Выдвижное боковое меню -->
+  <aside id="side-menu" class="side-menu">
+    <div class="side-menu-header">
+      <h2>Меню</h2>
+      <button class="close-btn" onclick="toggleMenu()">✕</button>
+    </div>
+    <ul class="side-menu-list">
+      <li><a href="#" onclick="showTab('tab-home'); toggleMenu();">Главная</a></li>
+      <li><a href="#" onclick="showTab('tab-diary'); toggleMenu();">Дневник</a></li>
+      <li><a href="#" onclick="showTab('tab-info'); toggleMenu();">База знаний</a></li>
+      <li><a href="#" onclick="toggleMenu();">Настройки</a></li>
+      <li><a href="#" onclick="toggleMenu();">О приложении</a></li>
+    </ul>
+  </aside>
+
+  <!-- Затемнение фона при открытии меню -->
+  <div id="overlay" class="overlay" onclick="toggleMenu()"></div>
+
+  <!-- Основной контент -->
+  <main class="content">
+    <!-- Шапка с кнопкой гамбургера -->
+    <header class="top-header">
+      <button class="hamburger-btn" onclick="toggleMenu()">☰</button>
+    </header>
+
+    <!-- Экран 1: Главная -->
+    <section id="tab-home" class="page active">
+      <h1>Главная</h1>
+      <p>Как ты себя чувствуешь сегодня?</p>
+    </section>
+
+    <!-- Экран 2: Дневник -->
+    <section id="tab-diary" class="page" style="display:none;">
+      <h1>Дневник эмоций</h1>
+      <textarea placeholder="Опиши свои мысли..."></textarea>
+      <div class="emotion-buttons">
+        <button>Тревога</button>
+        <button>Стыд</button>
+        <button>Покой</button>
+      </div>
+      <button id="save-btn">Сохранить запись</button>
+    </section>
+
+    <!-- Экран 3: Справочник -->
+    <section id="tab-info" class="page" style="display:none;">
+      <h1>База знаний</h1>
+      <div class="card">Что такое РПП и как себе помочь?</div>
+      <div class="card">Контакты горячих линий</div>
+    </section>
+  </main>
+
+  <!-- Нижняя панель навигации -->
+  <nav class="bottom-nav">
+    <button onclick="showTab('tab-home')">Главная</button>
+    <button onclick="showTab('tab-diary')">Дневник</button>
+    <button onclick="showTab('tab-info')">Помощь</button>
+  </nav>
+
+  <script src="app.js"></script>
+</body>
+</html>

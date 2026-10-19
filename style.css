@@ -1,0 +1,141 @@
+/* Базовые стили для мобилки */
+body {
+  margin: 0;
+  font-family: sans-serif;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  background-color: #f9f9f9;
+}
+
+.content {
+  flex: 1;
+  padding: 16px;
+  padding-bottom: 80px; /* чтобы контент не перекрывался нижней панелью */
+}
+
+.page {
+  display: none;
+}
+
+.page.active {
+  display: block;
+}
+
+/* Фиксированная нижняя панель навигации */
+.bottom-nav {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 60px;
+  background: #ffffff;
+  border-top: 1px solid #ddd;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  box-shadow: 0 -2px 5px rgba(0,0,0,0.05);
+}
+
+.bottom-nav button {
+  background: none;
+  border: none;
+  font-size: 14px;
+  font-weight: 500;
+  color: #333;
+  cursor: pointer;
+  flex: 1;
+  height: 100%;
+}
+
+.bottom-nav button:active {
+  background-color: #eee;
+}
+
+/* Кнопка открытия меню */
+.top-header {
+  margin-bottom: 8px;
+}
+
+.hamburger-btn {
+  background: none;
+  border: none;
+  font-size: 24px;
+  cursor: pointer;
+  padding: 0;
+  color: #000;
+}
+
+/* Боковое меню */
+.side-menu {
+  position: fixed;
+  top: 0;
+  left: -280px; /* Спрятано за левым краем */
+  width: 260px;
+  height: 100%;
+  background-color: #ffffff;
+  box-shadow: 2px 0 10px rgba(0,0,0,0.15);
+  z-index: 1000;
+  transition: left 0.3s ease;
+  padding: 20px;
+  box-sizing: border-box;
+}
+
+.side-menu.open {
+  left: 0; /* Выезжает на экран */
+}
+
+.side-menu-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1px solid #eee;
+  padding-bottom: 10px;
+}
+
+.side-menu-header h2 {
+  margin: 0;
+  font-size: 20px;
+}
+
+.close-btn {
+  background: none;
+  border: none;
+  font-size: 20px;
+  cursor: pointer;
+}
+
+.side-menu-list {
+  list-style: none;
+  padding: 0;
+  margin-top: 20px;
+}
+
+.side-menu-list li {
+  margin-bottom: 16px;
+}
+
+.side-menu-list a {
+  text-decoration: none;
+  color: #333;
+  font-size: 16px;
+  font-weight: 500;
+  display: block;
+}
+
+/* Затемняющий оверлей */
+.overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.4);
+  z-index: 999;
+  display: none;
+}
+
+.overlay.active {
+  display: block;
+}
+
