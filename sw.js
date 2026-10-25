@@ -1,8 +1,20 @@
 const CACHE_NAME = 'rpp-app-v1';
+const ASSETS = [
+  './',
+  './index.html',
+  './style.css',
+  './app.js',
+  './manifest.json',
+  './icon.png'
+];
 
-// Установка Service Worker
+// Кэшируем основные файлы при установке
 self.addEventListener('install', (e) => {
-  console.log('[Service Worker] Установлен');
+  e.waitUntil(
+    caches.open(CACHE_NAME).then((cache) => {
+      return cache.addAll(ASSETS);
+    })
+  );
 });
 
 // Перехват запросов (для офлайн-работы)
@@ -13,3 +25,4 @@ self.addEventListener('fetch', (e) => {
     })
   );
 });
+
