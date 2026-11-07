@@ -1,4 +1,4 @@
-const CACHE_NAME = 'rpp-app-v5';
+const CACHE_NAME = 'rpp-app-v6';
 const ASSETS = [
   './index.html',
   './style.css',

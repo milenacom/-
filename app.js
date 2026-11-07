@@ -7,7 +7,7 @@ if ('serviceWorker' in navigator) {
 
 // Открытие / закрытие бокового меню
 function toggleMenu() {
-  const menu = document.getElementById('side-menu');
+  const menu = document.getElementById('sideMenu'); // Исправлено с 'side-menu' на 'sideMenu'
   const overlay = document.getElementById('overlay');
   
   if (menu && overlay) {
