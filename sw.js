@@ -1,4 +1,4 @@
-const CACHE_NAME = 'rpp-app-v2';
+const CACHE_NAME = 'rpp-app-v5';
 const ASSETS = [
   './index.html',
   './style.css',
@@ -9,7 +9,6 @@ const ASSETS = [
 
 // Кэшируем основные файлы при установке
 self.addEventListener('install', (e) => {
-  e.eagerly ? e.eagerly() : null;
   e.waitUntil(
     caches.open(CACHE_NAME).then((cache) => {
       return cache.addAll(ASSETS);
@@ -35,8 +34,8 @@ self.addEventListener('activate', (e) => {
 // Перехват запросов (для офлайн-работы)
 self.addEventListener('fetch', (e) => {
   e.respondWith(
-    caches.match(e.request).then((response) => {
-      return response || fetch(e.request);
+    caches.match(e.request).then((cachedResponse) => {
+      return cachedResponse || fetch(e.request);
     })
   );
 });

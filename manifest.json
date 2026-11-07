@@ -1,11 +1,11 @@
 {
-  "name": "РПП Самопомощь",
-  "short_name": "РПП Помощь",
-  "description": "Приложение для отслеживания эмоций и поддержки при РПП",
+  "name": "ProBalance — РПП среди молодёжи",
+  "short_name": "ProBalance",
+  "description": "Мобильное приложение для поддержки и помощи при РПП",
   "start_url": "./index.html",
   "display": "standalone",
-  "background_color": "#ffffff",
-  "theme_color": "#ffffff",
+  "background_color": "#f4f1ea",
+  "theme_color": "#f4f1ea",
   "icons": [
     {
       "src": "./icon.png",
@@ -18,3 +18,5 @@
       "type": "image/png"
     }
   ]
+}
+

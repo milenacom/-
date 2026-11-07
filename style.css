@@ -1,17 +1,24 @@
-/* Базовые стили для мобилки */
+/* Оптимальный компактный вариант (вернули на 1-2px назад) */
 body {
   margin: 0;
-  font-family: sans-serif;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  background-color: #f4f1ea;
+  color: #2c2c2c;
   display: flex;
   flex-direction: column;
-  min-height: 100vh;
-  background-color: #f9f9f9;
+  height: 100vh;
+  overflow: hidden;
 }
 
 .content {
   flex: 1;
-  padding: 16px;
-  padding-bottom: 80px; /* чтобы контент не перекрывался нижней панелью */
+  padding: 10px 14px;
+  padding-bottom: 70px;
+  max-width: 480px;
+  margin: 0 auto;
+  width: 100%;
+  box-sizing: border-box;
+  overflow-y: auto;
 }
 
 .page {
@@ -22,58 +29,255 @@ body {
   display: block;
 }
 
+/* Шапка приложения */
+.app-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 8px;
+}
+
+.logo-area {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.logo-icon {
+  font-size: 24px;
+}
+
+.logo-text {
+  display: flex;
+  flex-direction: column;
+}
+
+.logo-text strong {
+  font-size: 16px;
+  letter-spacing: -0.5px;
+}
+
+.logo-text small {
+  font-size: 10px;
+  color: #666;
+}
+
+.hamburger-btn {
+  background: none;
+  border: none;
+  font-size: 22px;
+  cursor: pointer;
+  color: #333;
+}
+
+/* Главный баннер */
+.hero-card {
+  background-color: #eae5d9;
+  border-radius: 16px;
+  padding: 12px 14px;
+  margin-bottom: 8px;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.02);
+}
+
+.hero-text h1 {
+  font-size: 20px;
+  margin: 0 0 4px 0;
+  line-height: 1.1;
+}
+
+.hero-text p {
+  font-size: 12px;
+  color: #555;
+  margin: 0 0 8px 0;
+  line-height: 1.3;
+}
+
+.btn-accent {
+  background-color: #7b8575;
+  color: #fff;
+  border: none;
+  padding: 6px 12px;
+  border-radius: 14px;
+  font-size: 12px;
+  font-weight: 500;
+  cursor: pointer;
+}
+
+/* Быстрые иконки-разделы (сетка 4 штуки) */
+.quick-nav-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 6px;
+  margin-bottom: 8px;
+}
+
+.quick-item {
+  background-color: #eae5d9;
+  border-radius: 14px;
+  padding: 8px 4px;
+  text-align: center;
+  cursor: pointer;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.02);
+}
+
+.q-icon {
+  font-size: 16px;
+  margin-bottom: 2px;
+}
+
+.quick-item span {
+  font-size: 10px;
+  color: #444;
+  display: block;
+}
+
+/* Информационная карточка */
+.info-card {
+  background-color: #eae5d9;
+  border-radius: 15px;
+  padding: 10px 14px;
+  margin-bottom: 8px;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.02);
+}
+
+.info-card h3 {
+  margin: 0 0 4px 0;
+  font-size: 14px;
+}
+
+.info-card p {
+  margin: 0 0 6px 0;
+  font-size: 12px;
+  color: #555;
+  line-height: 1.3;
+}
+
+.link-more {
+  font-size: 12px;
+  color: #4a5448;
+  text-decoration: none;
+  font-weight: 600;
+  display: inline-block;
+}
+
+/* Карточка истории недели */
+.story-card {
+  background-color: #eae5d9;
+  border-radius: 15px;
+  padding: 10px 14px;
+  margin-bottom: 8px;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.02);
+}
+
+.story-badge {
+  font-size: 10px;
+  color: #666;
+  margin-bottom: 2px;
+  font-weight: 500;
+}
+
+.story-card h3 {
+  margin: 0 0 4px 0;
+  font-size: 14px;
+}
+
+.story-card p {
+  margin: 0 0 8px 0;
+  font-size: 12px;
+  color: #555;
+}
+
+.btn-secondary {
+  background-color: #7b8575;
+  color: #fff;
+  border: none;
+  padding: 6px 12px;
+  border-radius: 12px;
+  font-size: 11px;
+  font-weight: 500;
+  cursor: pointer;
+}
+
+/* Две карточки внизу */
+.bottom-split-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 8px;
+  margin-bottom: 8px;
+}
+
+.split-card {
+  background-color: #eae5d9;
+  border-radius: 15px;
+  padding: 10px;
+  cursor: pointer;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.02);
+}
+
+.split-card.highlight {
+  background-color: #dfd8cc;
+}
+
+.split-card h4 {
+  margin: 0 0 4px 0;
+  font-size: 13px;
+}
+
+.split-card p {
+  margin: 0 0 6px 0;
+  font-size: 10px;
+  color: #666;
+  line-height: 1.2;
+}
+
 /* Фиксированная нижняя панель навигации */
 .bottom-nav {
   position: fixed;
   bottom: 0;
   left: 0;
   width: 100%;
-  height: 60px;
-  background: #ffffff;
-  border-top: 1px solid #ddd;
+  height: 55px;
+  background: #eae5d9;
+  border-top: 1px solid #dcd5c7;
   display: flex;
   justify-content: space-around;
   align-items: center;
-  box-shadow: 0 -2px 5px rgba(0,0,0,0.05);
+  box-shadow: 0 -4px 10px rgba(0,0,0,0.03);
+  z-index: 100;
 }
 
-.bottom-nav button {
+.nav-btn {
   background: none;
   border: none;
-  font-size: 14px;
-  font-weight: 500;
-  color: #333;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
   cursor: pointer;
   flex: 1;
   height: 100%;
+  color: #777;
+  font-size: 10px;
+  gap: 2px;
 }
 
-.bottom-nav button:active {
-  background-color: #eee;
+.nav-btn .nav-icon {
+  font-size: 16px;
 }
 
-/* Кнопка открытия меню */
-.top-header {
-  margin-bottom: 8px;
-}
-
-.hamburger-btn {
-  background: none;
-  border: none;
-  font-size: 24px;
-  cursor: pointer;
-  padding: 0;
-  color: #000;
+.nav-btn.active {
+  color: #2c2c2c;
+  font-weight: 600;
 }
 
 /* Боковое меню */
 .side-menu {
   position: fixed;
   top: 0;
-  left: -280px; /* Спрятано за левым краем */
+  left: -280px;
   width: 260px;
   height: 100%;
-  background-color: #ffffff;
+  background-color: #f4f1ea;
   box-shadow: 2px 0 10px rgba(0,0,0,0.15);
   z-index: 1000;
   transition: left 0.3s ease;
@@ -82,20 +286,20 @@ body {
 }
 
 .side-menu.open {
-  left: 0; /* Выезжает на экран */
+  left: 0;
 }
 
 .side-menu-header {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  border-bottom: 1px solid #eee;
+  border-bottom: 1px solid #dcd5c7;
   padding-bottom: 10px;
 }
 
 .side-menu-header h2 {
   margin: 0;
-  font-size: 20px;
+  font-size: 18px;
 }
 
 .close-btn {
@@ -118,19 +322,18 @@ body {
 .side-menu-list a {
   text-decoration: none;
   color: #333;
-  font-size: 16px;
+  font-size: 15px;
   font-weight: 500;
   display: block;
 }
 
-/* Затемняющий оверлей */
 .overlay {
   position: fixed;
   top: 0;
   left: 0;
   width: 100%;
   height: 100%;
-  background: rgba(0, 0, 0, 0.4);
+  background: rgba(0, 0, 0, 0.3);
   z-index: 999;
   display: none;
 }

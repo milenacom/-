@@ -3,71 +3,203 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>РПП Помощник</title>
+  <title>ProBalance — РПП среди молодёжи</title>
   <link rel="manifest" href="manifest.json">
   <link rel="stylesheet" href="style.css">
-  <meta name="theme-color" content="#ffffff">
+  <meta name="theme-color" content="#f4f1ea">
 </head>
 <body>
 
-  <!-- Выдвижное боковое меню -->
-  <aside id="side-menu" class="side-menu">
+  <!-- Боковое меню -->
+  <div class="side-menu" id="sideMenu">
     <div class="side-menu-header">
       <h2>Меню</h2>
       <button class="close-btn" onclick="toggleMenu()">✕</button>
     </div>
     <ul class="side-menu-list">
       <li><a href="#" onclick="showTab('tab-home'); toggleMenu();">Главная</a></li>
-      <li><a href="#" onclick="showTab('tab-diary'); toggleMenu();">Дневник</a></li>
-      <li><a href="#" onclick="showTab('tab-info'); toggleMenu();">База знаний</a></li>
-      <li><a href="#" onclick="toggleMenu();">Настройки</a></li>
-      <li><a href="#" onclick="toggleMenu();">О приложении</a></li>
+      <li><a href="#" onclick="showTab('tab-about'); toggleMenu();">О проекте</a></li>
+      <li><a href="#" onclick="alert('Настройки в разработке'); toggleMenu();">Настройки</a></li>
+      <li><a href="#" onclick="alert('ProBalance v1.0 (ТОГУ)'); toggleMenu();">О приложении</a></li>
     </ul>
-  </aside>
-
-  <!-- Затемнение фона при открытии меню -->
-  <div id="overlay" class="overlay" onclick="toggleMenu()"></div>
+  </div>
+  <div class="overlay" id="overlay" onclick="toggleMenu()"></div>
 
   <!-- Основной контент -->
   <main class="content">
-    <!-- Шапка с кнопкой гамбургера -->
-    <header class="top-header">
-      <button class="hamburger-btn" onclick="toggleMenu()">☰</button>
-    </header>
-
+    
     <!-- Экран 1: Главная -->
     <section id="tab-home" class="page active">
-      <h1>Главная</h1>
-      <p>Как ты себя чувствуешь сегодня?</p>
-    </section>
+      <header class="app-header">
+        <div class="logo-area">
+          <span class="logo-icon">🦋</span>
+          <div class="logo-text">
+            <strong>ProBalance</strong>
+            <small>Ты важен. Даже сейчас.</small>
+          </div>
+        </div>
+        <button class="hamburger-btn" onclick="toggleMenu()">☰</button>
+      </header>
 
-    <!-- Экран 2: Дневник -->
-    <section id="tab-diary" class="page" style="display:none;">
-      <h1>Дневник эмоций</h1>
-      <textarea placeholder="Опиши свои мысли..."></textarea>
-      <div class="emotion-buttons">
-        <button>Тревога</button>
-        <button>Стыд</button>
-        <button>Покой</button>
+      <!-- Главный баннер -->
+      <div class="hero-card">
+        <div class="hero-text">
+          <h1>РПП среди молодёжи</h1>
+          <p>Это не просто «диета». Это серьёзное заболевание, которое может коснуться каждого.</p>
+          <button class="btn-accent" onclick="showTab('tab-info')">Узнать больше →</button>
+        </div>
       </div>
-      <button id="save-btn">Сохранить запись</button>
+
+      <!-- Быстрые иконки-разделы -->
+      <div class="quick-nav-grid">
+        <div class="quick-item" onclick="showTab('tab-info')">
+          <div class="q-icon">ℹ️</div>
+          <span>О РПП</span>
+        </div>
+        <div class="quick-item" onclick="showTab('tab-info')">
+          <div class="q-icon">🤍</div>
+          <span>Симптомы</span>
+        </div>
+        <div class="quick-item" onclick="showTab('tab-diary')">
+          <div class="q-icon">👥</div>
+          <span>Истории</span>
+        </div>
+        <div class="quick-item" onclick="showTab('tab-support')">
+          <div class="q-icon">🛟</div>
+          <span>Как помочь?</span>
+        </div>
+      </div>
+
+      <!-- Блок: Что такое РПП? -->
+      <div class="info-card">
+        <h3>Что такое РПП?</h3>
+        <p>Расстройства пищевого поведения — это не про еду. Это про контроль, тревогу и сложные эмоции.</p>
+        <a href="#" class="link-more" onclick="showTab('tab-info')">Читать подробнее →</a>
+      </div>
+
+      <!-- Карточка: История недели -->
+      <div class="story-card">
+        <div class="story-badge">⭐ История недели</div>
+        <h3>«Я наконец выбрала себя»</h3>
+        <p>Реальная история о том, как я справилась с РПП.</p>
+        <button class="btn-secondary" onclick="showTab('tab-diary')">Читать историю →</button>
+      </div>
+
+      <!-- Две карточки внизу -->
+      <div class="bottom-split-grid">
+        <div class="split-card" onclick="showTab('tab-support')">
+          <h4>Как помочь себе?</h4>
+          <p>Маленькие шаги к изменению.</p>
+          <span class="link-more">Узнать →</span>
+        </div>
+        <div class="split-card highlight" onclick="showTab('tab-support')">
+          <h4>Где найти поддержку?</h4>
+          <p>Психологи и горячие линии.</p>
+          <span class="link-more">Перейти →</span>
+        </div>
+      </div>
     </section>
 
-    <!-- Экран 3: Справочник -->
+    <!-- Экран 2: Полезное -->
     <section id="tab-info" class="page" style="display:none;">
-      <h1>База знаний</h1>
-      <div class="card">Что такое РПП и как себе помочь?</div>
-      <div class="card">Контакты горячих линий</div>
+      <header class="app-header">
+        <div class="logo-area">
+          <span class="logo-icon">🦋</span>
+          <div class="logo-text">
+            <strong>ProBalance</strong>
+            <small>База знаний</small>
+          </div>
+        </div>
+        <button class="hamburger-btn" onclick="toggleMenu()">☰</button>
+      </header>
+
+      <div class="info-card">
+        <h3>Симптоматика и виды РПП</h3>
+        <p>Здесь будет подробный разбор видов (анорексия, булимия, компульсивное переедание) как на первом концепте дизайнеров.</p>
+      </div>
     </section>
+
+    <!-- Экран 3: Поддержка -->
+    <section id="tab-support" class="page" style="display:none;">
+      <header class="app-header">
+        <div class="logo-area">
+          <span class="logo-icon">🦋</span>
+          <div class="logo-text">
+            <strong>ProBalance</strong>
+            <small>Помощь рядом</small>
+          </div>
+        </div>
+        <button class="hamburger-btn" onclick="toggleMenu()">☰</button>
+      </header>
+
+      <div class="info-card">
+        <h3>Горячая линия и Поддержка</h3>
+        <p>Если вам тяжело, вы можете обратиться за бесплатной помощью.</p>
+        <a href="tel:88002000122" class="btn-accent" style="display:inline-block; margin-top: 10px; text-decoration:none;">Позвонить на линию</a>
+      </div>
+    </section>
+
+    <!-- Экран 4: Дневник и Истории (на хотбаре) -->
+    <section id="tab-diary" class="page" style="display:none;">
+      <header class="app-header">
+        <div class="logo-area">
+          <span class="logo-icon">🦋</span>
+          <div class="logo-text">
+            <strong>ProBalance</strong>
+            <small>Истории и Дневник</small>
+          </div>
+        </div>
+        <button class="hamburger-btn" onclick="toggleMenu()">☰</button>
+      </header>
+
+      <div class="info-card">
+        <h3>Истории и Дневник преодоления</h3>
+        <p>Здесь пользователи смогут делиться своими историями преодоления и отслеживать эмоциональное состояние.</p>
+      </div>
+    </section>
+
+    <!-- Экран 5: О проекте (скрытый экран, открывается из гамбургера) -->
+    <section id="tab-about" class="page" style="display:none;">
+      <header class="app-header">
+        <div class="logo-area">
+          <span class="logo-icon">🦋</span>
+          <div class="logo-text">
+            <strong>ProBalance</strong>
+            <small>О проекте</small>
+          </div>
+        </div>
+        <button class="hamburger-btn" onclick="toggleMenu()">☰</button>
+      </header>
+
+      <div class="info-card">
+        <h3>О приложении ProBalance</h3>
+        <p>Студенческий проект ТОГУ, созданный для информирования о расстройствах пищевого поведения и бережной поддержки.</p>
+      </div>
+    </section>
+
   </main>
 
   <!-- Нижняя панель навигации -->
   <nav class="bottom-nav">
-    <button onclick="showTab('tab-home')">Главная</button>
-    <button onclick="showTab('tab-diary')">Дневник</button>
-    <button onclick="showTab('tab-info')">Помощь</button>
+    <button class="nav-btn active" onclick="showTab('tab-home')">
+      <span class="nav-icon">🏠</span>
+      <span>Главная</span>
+    </button>
+    <button class="nav-btn" onclick="showTab('tab-info')">
+      <span class="nav-icon">📖</span>
+      <span>Полезное</span>
+    </button>
+    <button class="nav-btn" onclick="showTab('tab-support')">
+      <span class="nav-icon">🤍</span>
+      <span>Поддержка</span>
+    </button>
+    <button class="nav-btn" onclick="showTab('tab-diary')">
+      <span class="nav-icon">👥</span>
+      <span>Дневник</span>
+    </button>
   </nav>
 
   <script src="./app.js"></script>
 </body>
 </html>
+
