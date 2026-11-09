@@ -1,6 +1,6 @@
 {
-  "name": "ProBalance — РПП среди молодёжи",
-  "short_name": "ProBalance",
+  "name": "ТЕЛО — РПП среди молодёжи",
+  "short_name": "ТЕЛО",
   "description": "Мобильное приложение для поддержки и помощи при РПП",
   "start_url": "./index.html",
   "display": "standalone",
