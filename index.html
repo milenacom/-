@@ -139,23 +139,37 @@
       </div>
     </section>
 
-    <!-- Экран 4: Дневник и Истории (на хотбаре) -->
+
+    <!-- Экран 4: Дневник и Истории -->
     <section id="tab-diary" class="page" style="display:none;">
       <header class="app-header">
         <div class="logo-area">
           <span class="logo-icon">🦋</span>
           <div class="logo-text">
             <strong>ТЕЛО</strong>
-            <small>Истории и Дневник</small>
+            <small>Личный дневник</small>
           </div>
         </div>
         <button class="hamburger-btn" onclick="toggleMenu()">☰</button>
       </header>
 
+      <!-- Форма создания новой записи -->
       <div class="info-card">
-        <h3>Истории и Дневник преодоления</h3>
-        <p>Здесь пользователи смогут делиться своими историями преодоления и отслеживать эмоциональное состояние.</p>
+        <h3>Как ты себя чувствуешь сегодня?</h3>
+        <p style="margin-bottom: 10px;">Запиши свои мысли. Они останутся только на твоем устройстве.</p>
+        
+        <textarea 
+          id="diaryInput" 
+          rows="4" 
+          placeholder="Опиши свои эмоции, события дня или маленькие победы..."
+          style="width: 100%; padding: 12px; border-radius: 12px; border: 1px solid #dcd6c8; font-family: inherit; resize: vertical; box-sizing: border-box; margin-bottom: 12px;"
+        ></textarea>
+        
+        <button class="btn-accent" onclick="addDiaryEntry()" style="width: 100%;">Сохранить запись</button>
       </div>
+
+      <!-- Контейнер, куда JS будет добавлять записи, сгруппированные по дням -->
+      <div id="diaryEntriesContainer"></div>
     </section>
 
     <!-- Экран 5: О проекте (скрытый экран, открывается из гамбургера) -->
@@ -202,4 +216,6 @@
   <script src="./app.js"></script>
 </body>
 </html>
+
+
 
