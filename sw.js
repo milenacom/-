@@ -1,10 +1,11 @@
-const CACHE_NAME = 'telo-rpp-v7';
+const CACHE_NAME = 'telo-rpp-v8';
 const APP_CACHE_PREFIX = 'telo-rpp-';
+const LEGACY_CACHE_NAMES = ['rpp-app-v6'];
 
 const ASSETS = [
   './',
   './index.html',
-  './style.css',
+  './style.css?v=stories-design-2',
   './app.js',
   './manifest.json',
   './icon.png'
@@ -26,7 +27,7 @@ self.addEventListener('activate', (event) => {
     caches.keys()
       .then((keys) => Promise.all(
         keys
-          .filter((key) => key.startsWith(APP_CACHE_PREFIX) && key !== CACHE_NAME)
+          .filter((key) => (key.startsWith(APP_CACHE_PREFIX) || LEGACY_CACHE_NAMES.includes(key)) && key !== CACHE_NAME)
           .map((key) => caches.delete(key))
       ))
       .then(() => self.clients.claim())

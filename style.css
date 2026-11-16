@@ -485,3 +485,221 @@ body {
     padding-bottom: 76px;
   }
 }
+
+
+/* Обновлённый дизайн раздела «Истории» */
+#tab-stories .stories-intro {
+  background: linear-gradient(145deg, #eee9dd 0%, #e8e3d7 100%);
+  border: 1px solid #ded8ca;
+  border-radius: 20px;
+  padding: 18px;
+  margin: 12px 0 16px;
+  box-shadow: 0 5px 16px rgba(54, 57, 46, 0.045);
+}
+
+#tab-stories .stories-intro h2 {
+  color: #30372f;
+  font-size: 20px;
+  line-height: 1.25;
+  margin: 0 0 12px;
+  letter-spacing: -0.25px;
+}
+
+#tab-stories .stories-intro p {
+  color: #4c5048;
+  font-size: 13px;
+  line-height: 1.6;
+  margin: 0 0 12px;
+}
+
+#tab-stories .stories-warning {
+  background: #f8f6f0;
+  border: 1px solid #e1dfd4;
+  border-left: 4px solid #7b8575;
+  border-radius: 12px;
+  padding: 12px 13px;
+  margin: 14px 0 12px !important;
+}
+
+#tab-stories .stories-warning strong {
+  color: #343b32;
+}
+
+#tab-stories .stories-edit-note {
+  color: #686d62 !important;
+  font-size: 11px !important;
+  line-height: 1.5 !important;
+  border-top: 1px solid rgba(94, 101, 84, 0.16);
+  padding-top: 11px;
+  margin-bottom: 0 !important;
+}
+
+#tab-stories .stories-list {
+  display: grid;
+  gap: 11px;
+  margin: 0 0 14px;
+}
+
+#tab-stories .story-accordion {
+  background: #fffdf8;
+  border: 1px solid #e1dccf;
+  border-radius: 17px;
+  overflow: hidden;
+  box-shadow: 0 4px 13px rgba(54, 57, 46, 0.055);
+  transition: border-color 180ms ease, box-shadow 180ms ease, background 180ms ease;
+}
+
+#tab-stories .story-accordion[open] {
+  background: #fffefa;
+  border-color: #aab39f;
+  box-shadow: 0 6px 18px rgba(54, 57, 46, 0.075);
+}
+
+#tab-stories .story-accordion summary {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) 38px;
+  grid-template-areas:
+    "number toggle"
+    "title toggle";
+  align-items: center;
+  gap: 7px 12px;
+  min-height: 76px;
+  padding: 15px 16px;
+  cursor: pointer;
+  list-style: none;
+  text-align: left;
+  -webkit-tap-highlight-color: transparent;
+}
+
+#tab-stories .story-accordion summary::-webkit-details-marker {
+  display: none;
+}
+
+#tab-stories .story-accordion summary::marker {
+  content: "";
+}
+
+#tab-stories .story-number {
+  grid-area: number;
+  display: inline-flex;
+  align-items: center;
+  width: fit-content;
+  padding: 4px 9px;
+  border-radius: 999px;
+  background: #edf0e8;
+  color: #596451;
+  font-size: 10px;
+  line-height: 1.2;
+  font-weight: 750;
+  letter-spacing: 0.055em;
+  text-transform: uppercase;
+}
+
+#tab-stories .story-title {
+  grid-area: title;
+  display: block;
+  color: #30372f;
+  font-size: 14px;
+  line-height: 1.4;
+  font-weight: 650;
+  overflow-wrap: anywhere;
+}
+
+#tab-stories .story-toggle {
+  grid-area: toggle;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  background: #edf0e8;
+  color: #58634f;
+  font-size: 0;
+  line-height: 1;
+  transition: background 180ms ease, transform 180ms ease;
+}
+
+#tab-stories .story-toggle::before {
+  content: "+";
+  font-size: 23px;
+  font-weight: 400;
+  transform: translateY(-1px);
+}
+
+#tab-stories .story-accordion[open] .story-toggle {
+  background: #dfe6d8;
+}
+
+#tab-stories .story-accordion[open] .story-toggle::before {
+  content: "−";
+  font-size: 22px;
+}
+
+#tab-stories .story-accordion summary:focus-visible {
+  outline: 3px solid #7b8575;
+  outline-offset: -4px;
+  border-radius: 16px;
+}
+
+#tab-stories .story-content {
+  padding: 2px 16px 17px;
+  border-top: 1px solid #e9e5da;
+  margin: 0 16px;
+}
+
+#tab-stories .story-content p {
+  color: #4b5048;
+  font-size: 13px;
+  line-height: 1.68;
+  margin: 13px 0 0;
+}
+
+#tab-stories .stories-footer-note {
+  background: #eae5d9;
+  border: 1px solid #ded8ca;
+  border-radius: 16px;
+  padding: 15px 16px;
+  color: #4c5048;
+  font-size: 12px;
+  line-height: 1.6;
+  margin: 0 0 18px;
+}
+
+@media (hover: hover) {
+  #tab-stories .story-accordion summary:hover {
+    background: rgba(237, 240, 232, 0.55);
+  }
+}
+
+@media (max-width: 360px) {
+  #tab-stories .stories-intro {
+    padding: 15px;
+  }
+
+  #tab-stories .story-accordion summary {
+    padding: 13px;
+    grid-template-columns: minmax(0, 1fr) 34px;
+  }
+
+  #tab-stories .story-toggle {
+    width: 32px;
+    height: 32px;
+  }
+
+  #tab-stories .story-title {
+    font-size: 13px;
+  }
+
+  #tab-stories .story-content {
+    margin: 0 13px;
+    padding: 2px 0 15px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  #tab-stories .story-accordion,
+  #tab-stories .story-toggle {
+    transition: none;
+  }
+}
