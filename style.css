@@ -442,7 +442,7 @@ body {
 }
 
 .story-accordion[open] .story-toggle {
-  transform: rotate(45deg);
+  transform: none;
 }
 
 .story-accordion summary:focus-visible {
