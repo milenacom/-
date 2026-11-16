@@ -342,3 +342,146 @@ body {
   display: block;
 }
 
+
+
+/* Раздел с личными историями */
+.stories-intro,
+.stories-footer-note {
+  background: #eae5d9;
+  border-radius: 15px;
+  padding: 14px;
+  margin-bottom: 12px;
+}
+
+.stories-intro h2 {
+  margin: 0 0 8px;
+  font-size: 18px;
+  line-height: 1.25;
+}
+
+.stories-intro p,
+.stories-footer-note {
+  font-size: 13px;
+  line-height: 1.55;
+  color: #45483f;
+}
+
+.stories-intro p {
+  margin: 0 0 9px;
+}
+
+.stories-intro p:last-child {
+  margin-bottom: 0;
+}
+
+.stories-warning {
+  padding: 10px 11px;
+  background: #f4f1ea;
+  border-left: 3px solid #7b8575;
+  border-radius: 8px;
+}
+
+.stories-edit-note {
+  font-size: 11px !important;
+  color: #666 !important;
+}
+
+.stories-list {
+  display: grid;
+  gap: 10px;
+  margin-bottom: 12px;
+}
+
+.story-accordion {
+  background: #eae5d9;
+  border-radius: 15px;
+  overflow: hidden;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.025);
+}
+
+.story-accordion summary {
+  list-style: none;
+  display: grid;
+  grid-template-columns: 1fr auto;
+  gap: 5px 10px;
+  align-items: center;
+  padding: 14px;
+  cursor: pointer;
+  min-height: 48px;
+}
+
+.story-accordion summary::-webkit-details-marker {
+  display: none;
+}
+
+.story-number {
+  grid-column: 1;
+  color: #626b5d;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.03em;
+  text-transform: uppercase;
+}
+
+.story-title {
+  grid-column: 1;
+  font-size: 14px;
+  line-height: 1.35;
+  font-weight: 650;
+  color: #30332e;
+}
+
+.story-toggle {
+  grid-column: 2;
+  grid-row: 1 / span 2;
+  align-self: center;
+  font-size: 23px;
+  line-height: 1;
+  color: #596351;
+  transition: transform 0.2s ease;
+}
+
+.story-accordion[open] .story-toggle {
+  transform: rotate(45deg);
+}
+
+.story-accordion summary:focus-visible {
+  outline: 2px solid #596351;
+  outline-offset: -3px;
+  border-radius: 15px;
+}
+
+.story-content {
+  padding: 0 14px 14px;
+  border-top: 1px solid #d8d2c6;
+}
+
+.story-content p {
+  margin: 12px 0 0;
+  font-size: 13px;
+  line-height: 1.6;
+  color: #45483f;
+}
+
+.stories-footer-note {
+  font-size: 12px;
+  margin-bottom: 18px;
+}
+
+@media (max-width: 360px) {
+  .nav-btn {
+    font-size: 9px;
+  }
+
+  .nav-btn .nav-icon {
+    font-size: 15px;
+  }
+
+  .bottom-nav {
+    height: 58px;
+  }
+
+  .content {
+    padding-bottom: 76px;
+  }
+}

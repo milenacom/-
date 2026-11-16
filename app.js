@@ -40,8 +40,9 @@ function showTab(tabId) {
   let btnIndex = 0;
   if (tabId === 'tab-home') btnIndex = 0;
   else if (tabId === 'tab-info') btnIndex = 1;
-  else if (tabId === 'tab-support') btnIndex = 2;
+  else if (tabId === 'tab-stories') btnIndex = 2;
   else if (tabId === 'tab-diary') btnIndex = 3;
+  else if (tabId === 'tab-support') btnIndex = 4;
 
   if (navButtons[btnIndex]) {
     navButtons[btnIndex].classList.add('active');
